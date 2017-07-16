@@ -1,0 +1,680 @@
+/*
+  With The Name Of God
+  Main style file
+
+_ Ali Almohaya (AKA Almo7aya) 18/May/2017 _
+_ Hotspot Temp _
+_ https://fb.com/Almo7aya _
+
+*/
+
+* {
+  
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  
+}
+
+
+html, body {
+  
+  background: #fee387; /* Old Browsers */
+  background: -webkit-radial-gradient(top right,#fee387,#731645); /*Safari 5.1-6*/
+  background: -o-radial-gradient(top right,#fee387,#731645); /*Opera 11.1-12*/
+  background: -moz-radial-gradient(top right,#fee387,#731645); /*Fx 3.6-15*/
+  background: radial-gradient(top right, #fee387, #731645); /*Standard*/
+
+  direction: rtl;
+  
+  font-family: cairo;
+  
+}
+
+.container {
+  
+  width: 95%;
+  
+  margin: 0 auto;
+
+  border: 1px solid #fff;
+
+  padding: 20px;
+  
+}
+
+@media screen and (min-width: 780px) {
+   
+  .container {
+
+    width: 750px;
+
+  }
+
+}
+
+::selection {
+  
+  background-color: #D0A071;
+  
+}
+
+button,
+li {
+
+  cursor: pointer;
+
+}
+
+.noborder {
+
+  border: none;
+
+}
+
+a, a:hover,
+a:active {
+  
+  color: #fff;
+  
+  text-decoration: none;
+  
+  
+}
+
+
+main {
+  
+  background-image: url(../img/themles.png);
+  
+  position: relative;
+
+  z-index: 99;
+}
+
+main::before {
+
+  content: ' ';
+
+  background-image: url('../img/cornar.svg');
+
+  display: block;
+  width: 100%;
+
+  height: 100%;
+
+  position: absolute;
+
+  z-index: -4;
+
+  -webkit-opacity: .2;
+  -moz-opacity: .2;
+  opacity: .2;
+  
+  
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+
+
+}
+
+main span#top {
+  
+  position: fixed;
+  
+  display: block;
+  
+  width: 30px;
+  height: 30px;
+  
+  bottom: -30px;
+  
+  right: 20px;
+  
+  background-color: rgba(254,239,206, .3);
+  
+  color: #fff;
+  
+  text-align: center;
+
+  -webkit-transition: all .6s;
+  -moz-transition: all .6s;
+  transition: all .6s;
+
+  
+
+  cursor: pointer;
+  
+  fill: #fff;
+  
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  
+  
+  
+}
+
+main span#top.back {
+  bottom: 20px;
+}
+
+main span#top:active {
+    background-color: rgba(254,239,206, .6);
+}
+
+hr {
+  
+  color: #fff;
+  
+  border-top: 1px solid #fff;
+  
+  margin: 10px 10px;
+  
+}
+
+
+/* 
+* start header 
+==========================================================================*/
+
+header.header {
+  
+  text-align: center;
+  
+  color: #fff;
+  
+  padding-top: 15px;
+  
+}
+
+
+header.header ul {
+  
+  margin: 0;
+  padding: 0;
+  
+  list-style: none;
+  
+  text-align: center;
+  
+}
+
+header.header ul li {
+  
+  display: inline-block;
+  
+  padding: 15px;
+ 
+  background-color: rgba(254,239,206, .3);
+  
+  margin: 3px;
+  
+}
+
+header.header ul li:active {
+    background-color: rgba(254,239,206, .6);
+}
+
+/* 
+* start the log in section style
+======================================================================== */
+
+section.login-form {
+  
+  color: #fff;
+  
+  text-align: center;
+}
+
+section.login-form #main-form input {
+  
+  display: block;
+  
+  margin: 25px auto;
+  
+  border-radius: 6px;
+  
+  outline: none;
+  
+  color: #fff;
+  
+  text-align: center;
+  
+  font-family: cairo;
+}
+
+section.login-form #main-form input[type='password'] {
+  
+  width: 100%;
+  
+  padding: 15px 10px;
+  
+  background-color: rgba(254,239,206, .3);
+  
+  color: #fff;
+  
+  border: 1px solid #fff;
+  
+  direction: ltr;
+  
+  font-size: 1.1em;
+}
+
+section.login-form #main-form input[type='submit'], .btn {
+  
+  width: 60%;
+  
+  padding: 7px 10px;
+  
+  background-color: rgba(254,239,206, .3);
+  
+  border: 1px solid #fff;
+  
+  color: #fff;
+  
+  font-family: cairo;
+}
+
+section.login-form #main-form input[type='submit']:active {
+    background-color: rgba(254,239,206, .6);
+}
+
+
+/*
+* icons with btns style
+*==================================================================*/
+
+.iconWith {
+  
+  color: #fff;
+  
+  text-align: center;
+  
+  padding: 50px 0;
+  
+}
+
+.iconWith button {
+  
+  display: block;
+  
+  margin: 15px auto;
+  
+  border-radius: 5px;
+  
+  background-color: rgba(254,239,206, .3);
+  
+  border: 1px solid #fff;
+  
+  color: #fff;
+  
+  font-family: cairo;
+  
+  padding: 15px 20px;
+
+  outline: none;
+}
+
+
+button:active {
+  
+  background-color: rgba(254,239,206, .6);
+  
+}
+
+/* 
+* start prices 
+=============================================================*/
+
+article.prices {
+  
+  color: #fff;
+  
+  text-align: center;
+  
+  padding-bottom: 15px;
+  
+}
+
+
+article.prices table#main-table {
+  
+  margin: auto;
+  
+}
+
+
+article.prices table#main-table tr th {
+  
+  
+  padding: 15px 10px;
+  
+  background-color: rgba(254,239,206, .5);
+  
+}
+
+article.prices table#main-table tr td {
+  
+  
+  padding: 15px;
+  
+  background-color: rgba(254,239,206, .3);
+  
+}
+
+/*
+* start ads 
+===========================================================*/
+
+.ads {
+  
+  text-align: center;
+  
+  color: #fff;
+  
+}
+
+
+/* 
+* start sell points 
+==========================================================*/
+
+article.sell-points {
+  
+  text-align: center;
+  
+  color: #fff;
+  
+  padding-bottom: 15px;
+  
+  
+  
+}
+
+article.sell-points ul {
+  
+  list-style: none;
+  
+  padding: 0;
+  
+  margin: 0;
+  
+}
+
+article.sell-points ul li {
+  
+  padding: 15px 10px;
+  
+  background-color: rgba(254,239,206, .3);
+  
+  margin: 5px;
+}
+
+
+/*
+* start footer 
+========================================================*/
+
+footer {
+  
+  text-align: center;
+  
+  color: #fff;
+  
+  margin-bottom: 0;
+  
+  border-top: 1px solid #fff;
+  
+  background-color: rgba(254,239,206, .4);
+  
+  overflow: hidden;
+  
+}
+
+footer p {
+  
+  margin:0;
+  
+}
+
+footer a {
+  
+  color: #fff;
+  
+}
+
+/*
+* almasbaha page
+=====================================================================*/
+
+div.masbaha {
+  
+  text-align: center;
+  
+  color: #fff
+  
+}
+
+div.masbaha #shower {
+  
+  font-size: 2.6em;
+  
+}
+
+div.masbaha button {
+  
+  display: block;
+  
+  outline: none;
+
+  margin: 15px auto;
+  
+  border-radius: 5px;
+  
+  background-color: rgba(254,239,206, .3);
+  
+  border: 1px solid #fff;
+  
+  color: #fff;
+  
+  font-family: cairo;
+}
+
+div.masbaha button:active {
+    background-color: rgba(254,239,206, .6);
+}
+
+div.masbaha button#add {
+  
+  outline: none;
+
+  width: 140px;
+  height: 100px;
+  
+  font-size: 2.8em;
+  
+}
+
+div.masbaha button#reset {
+  
+  padding: 12px 7px;
+  
+}
+
+/*
+* athkar page
+==============================================================*/
+
+div.athkar-page ul {
+  padding: 0;
+}
+
+div.athkar-page li{
+  
+  text-align: right;
+  
+  margin: 20px 0;
+  
+}
+
+div.athkar-page {
+  
+  text-align: center;
+  
+  color: #fff
+  
+}
+
+div.athkar-page button {
+  
+  display: block;
+  
+  outline: none;
+
+  margin: 15px auto;
+  
+  border-radius: 5px;
+  
+  background-color: rgba(254,239,206, .3);
+  
+  border: 1px solid #fff;
+  
+  color: #fff;
+  
+  font-family: cairo;
+  
+  padding: 15px 20px;
+}
+
+div.athkar-page button:active {
+    background-color: rgba(254,239,206, .6);
+}
+
+/*
+* start estarha styles
+==============================================================*/
+
+
+section.estraha {
+  
+  color: #fff;
+}
+
+section.estraha h3 {
+  
+  text-align: center;
+  
+  margin-top: 7px;
+  
+}
+
+
+section.estraha ul.nav {
+  
+  background-color: rgba(254,239,206, .6);
+  
+  list-style: none;
+  
+  margin:0;
+  
+  padding: 4px;
+  
+}
+
+
+section.estraha ul.nav li {
+  
+  display: inline-block;
+  
+  padding: 10px 1px;
+  
+  font-size: .95em;
+  
+}
+
+section.estraha ul.nav a li::before {
+  content: '/';
+}
+
+section.estraha ul.nav a:first-of-type li::before {
+  content: '';
+}
+
+
+section.estraha ul.files {
+  margin: 0;
+  padding: 0;
+  
+  list-style: none;
+}
+
+
+section.estraha ul.files li {
+  
+  background-color: rgba(254,239,206, .6);
+  
+  padding: 15px 5px;
+  
+  margin: 10px 0px;
+  
+  font-size: .85em;
+  
+}
+
+section.estraha ul.files li img {
+  
+  float: left;
+  
+}
+
+
+
+
+/*
+* viewer
+======================================================*/
+
+
+
+section.viewer p {
+  
+  text-align: center;
+  
+}
+
+
+section.viewer video,
+section.viewer audio {
+  
+  text-align: center;
+  
+  display: block;
+  
+  margin: auto;
+  
+}
+
+section.viewer button {
+  
+  display: block;
+  text-align: center;
+  
+  margin: 10px auto;
+  
+  padding: 10px;
+  
+  position: relative;
+  
+}
+
+section.viewer button img {
+  
+  position: relative;
+  
+  top: 5px;
+  
+  margin-right: 10px;
+  
+}

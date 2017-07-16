@@ -1,0 +1,205 @@
+<!--
+With The Name Of God
+
+_ Ali Almohaya (AKA Almo7aya) 18/May/2017 - last edit 21/May/2017_
+_ Hotspot Temp - estraha plug in _
+_ https://fb.com/Almo7aya _
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+	<meta charset="utf8" />
+
+	<title> الاستراحة الرمضانية </title>
+
+	<meta name="theme-color" content="#D0A071" />
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable" />
+	<!--
+
+	<link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+	-->  
+
+	<link rel="stylesheet" href="css/cairo-font.css" />
+
+	<!--add the normalize to fix the browser issus-->
+	<link href="css/normalize.css" rel="stylesheet" />
+
+	<!--The style file will auto create by ruby with sass-->
+    <link href="css/style.css" rel="stylesheet">
+
+
+  </head>
+  <body id="estraha">
+
+	<main>
+
+	  <span id="top">
+
+		<img src="img/arrow.svg" width="23px"/>
+
+	  </span>
+
+	  <!--start header-->
+	  <header class="header">
+		<div class="container noborder">
+
+		  <img src="img/moon.svg" width="140px"/>
+
+		  <h1> رمضان كريم </h1>
+
+
+		  <p> <%= name %> </p>
+		  
+
+
+		</div>
+	  </header>
+	  <!--end header-->
+
+	  <!--start section-->
+	  <section class=" estraha viewer">
+		<div class="container">
+
+		  <h3> الاستراحة الرمضانية </h3>
+
+		  <ul class="nav">
+
+			<a href="/">
+				<li class="no"> الرئيسية </li>
+			</a>
+				 
+			<% let url = '', pos = 1;%>
+					 
+			<%  for (key in filesList) { %>
+        		<% if (filesList.hasOwnProperty(key)) { %>
+
+					<% url += key + "=" + filesList[key] + '&'; pos++%>
+
+						<a href="/browser?<%= url %>">
+							<li>
+							 	<%= filesList[key] %>
+							</li>
+						</a>
+							
+					<% } %>
+							
+    			<% } %>
+
+		  </ul>
+		  
+		  <hr />
+		  
+		  <p> <%= cenFile %> </p>
+		  
+		  <% let target = {}, pass = true %>
+		  
+		  <% files.forEach( file => { %>
+		  
+		  	<% if ( file.name === cenFile ) { %>
+		  	
+		  		<% target = file; return false; %>
+		  	
+		  	<% } else if ( file.type === "dir" ) { %>
+		  		
+		  		<% file.childer.forEach( file => { %>
+		  
+		  			<% if ( file.name === cenFile ) { %>
+		  	
+		  				<% target = file; return false; %>
+		  	
+		  			<% } else if ( file.type === "dir" ) { %>
+		  	
+		  				<% file.childer.forEach( file => { %>
+		  
+		  					<% if ( file.name === cenFile ) { %>
+		  	
+		  						<% target = file; return false;%>
+		  	
+		  					<% } else if ( file.type === "dir" ) { %>
+		  	
+		  						<% file.childer.forEach( file => { %>
+		  
+		  							<% if ( file.name === cenFile ) { %>
+		  	
+		  								<% target = file; return false;%>
+		  	
+		  							<% } else { %>
+		  							
+		  							<% } %>
+		  
+		  						<% }); %>
+		  	
+		  					<% } %>
+		  
+		  				<% }); %>
+		  	
+		  			<% } %>
+		  
+		  		<% }); %>
+		  
+		  	<% } %>
+		  
+		  <% }); %>
+		  
+		  
+		  <% if (!target){ pass = false; } %>
+		  
+		  <% if ( target.type === "video" && pass) { %>
+		  
+		  		<video src="/streamer?<%= url %>" width="100%" controls autoplay>
+			
+		  		</video>
+		  		
+		  <% } else if ( target.type === "audio" && pass) { %>
+		  	
+		    <audio src="/streamer?<%= url %>" controls>
+			
+		  	</audio>
+
+		  <% } else { %>
+		  
+		  	 File Not Found
+		  
+		  <% } %>
+		  
+		  <a href="/streamer?<%= url %>" download="<%= cenFile %>">
+		  	<button class="btn"> تحميل
+		   		<img src="img/cloud-computing.svg" width="20px" />
+		  	</button>
+		  </a>
+		</div>
+	  </section>
+
+	  <br />
+
+	  <br />
+
+
+	  <!--start footer and my name (;-->
+
+	  <footer>
+		<div class="container noborder">
+
+		  <p>Made with ♥ ↝ <a href="https://fb.com/Almo7aya">Ali Almohaya</a></p>
+
+		  <p> مصممه خصيصا للمسابقة الرمضانية الاولى </p>
+		</div>
+	  </footer>
+
+	  <!--end footer and my name (;-->
+
+
+	</main>
+
+
+	<!--add jQuery lib-->
+	<script src="js/jquery.js"></script>
+	<!--main javascript file-->
+	<script src="js/index.js"></script>
+
+  </body>
+</html>

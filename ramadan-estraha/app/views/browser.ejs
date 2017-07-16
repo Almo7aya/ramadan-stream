@@ -1,0 +1,270 @@
+<!--
+With The Name Of God
+
+_ Ali Almohaya (AKA Almo7aya) 18/May/2017 - last edit 21/May/2017_
+_ Hotspot Temp - estraha plug in _
+_ https://fb.com/Almo7aya _
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+	<meta charset="utf8" />
+
+	<title> الاستراحة الرمضانية </title>
+
+	<meta name="theme-color" content="#D0A071" />
+	<link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable" />
+	<!--
+
+	<link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+	-->  
+
+	<link rel="stylesheet" href="/css/cairo-font.css" />
+
+	<!--add the normalize to fix the browser issus-->
+	<link href="/css/normalize.css" rel="stylesheet" />
+
+	<!--The style file will auto create by ruby with sass-->
+    <link href="/css/style.css" rel="stylesheet">
+
+
+  </head>
+  <body id="estraha">
+
+	<main>
+
+	  <span id="top">
+
+		<img src="/img/arrow.svg" width="23px"/>
+
+	  </span>
+
+	  <!--start header-->
+	  <header class="header">
+		<div class="container noborder">
+
+		  <img src="/img/moon.svg" width="140px"/>
+
+		  <h1> رمضان كريم </h1>
+
+		  <p> <%= name %> </p>
+		  
+		  
+		</div>
+	  </header>
+	  <!--end header-->
+
+	  <!--start section-->
+	  <section class=" estraha ">
+		<div class="container">
+		  
+		  <h3> الاستراحة الرمضانية </h3>
+		  
+
+		  <ul class="nav">
+
+			<a href="/">
+				<li class="no"> الرئيسية </li>
+			</a>
+				 
+			<% let url = '', pos = 1;%>
+					 
+			<%  for (key in filesList) { %>
+        		<% if (filesList.hasOwnProperty(key)) { %>
+
+					<% url += key + "=" + filesList[key] + '&'; pos++%>
+
+						<a href="/browser?<%= url %>">
+							<li>
+							 	<%= filesList[key] %>
+							</li>
+						</a>
+							
+					<% } %>
+							
+    			<% } %>
+
+		  </ul>
+		  
+		  <hr />
+		  
+		  
+		  <ul class="files">
+
+				<% files.forEach(file => { %>
+
+					<% if (file.name === pathList[0]) { %>
+						
+						<% if (size > 1) { %>
+						
+							<% file.childer.forEach( subFile => { %>
+							
+								<% if (subFile.name === pathList[1]) { %>
+							
+							    	<% if (size > 2) { %>
+							    	
+							    		<% subFile.childer.forEach( subsubFile => { %>
+							    		
+							    			<% if (subsubFile.name === pathList[2]) { %>
+							    			
+												<% subsubFile.childer.forEach( subFile => { %>
+													<% if (subFile.type === "dir") { %>
+														<a href="/browser?<%= url  + 'file' + (size+1) + "=" + subFile.name %>" >
+															<li>
+																<%= subFile.name %>
+																<img src="/img/folder.svg" width="20px">
+															</li>
+														</a>
+							    					<% } else if (subFile.type === "audio") { %>
+							    						<a href="/viewer?<%= url + 'file' + (size + 1) + "=" + subFile.name %>">
+															<li>
+																<%= subFile.name %>
+																<img src="/img/speaker.svg" width="20px">
+															</li>
+														</a>
+							    					<% } else if (subFile.type === "video") { %>
+							    						<a href="/viewer?<%= url + 'file' + (size + 1) + "=" + subFile.name %>">
+															<li>
+																<%= subFile.name %>
+																<img src="/img/play-button.svg" width="20px">
+															</li>
+														</a>
+							    					<% } else if (subFile.type === "pdf") { %>
+							    						<a href="/streamer?<%= url + 'file' + (size + 1) + "=" + subFile.name %>">
+															<li>
+																<%= subFile.name %>
+																<img src="/img/agenda.svg" width="20px">
+															</li>
+														</a>
+							    					<% } %>
+												<% }); %>
+							    			
+							    			<% } %>
+							    		
+							    		<% }); %>
+							    
+							    	<% } else { %>
+							    	
+										<% subFile.childer.forEach( subFile => { %>
+											<% if (subFile.type === "dir") { %>
+												<a href="/browser?<%= url  + 'file' + (size+1) + "=" + subFile.name %>" >
+													<li>
+														<%= subFile.name %>
+														<img src="/img/folder.svg" width="20px">
+													</li>
+												</a>
+							    			<% } else if (subFile.type === "audio") { %>
+							    						<a href="/viewer?<%= url + 'file' + (size + 1) + "=" + subFile.name %>">
+													<li>
+														<%= subFile.name %>
+														<img src="/img/speaker.svg" width="20px">
+													</li>
+												</a>
+							    			<% } else if (subFile.type === "video") { %>
+							    				<a href="/viewer?<%= url + 'file' + (size + 1) + "=" + subFile.name %>">
+													<li>
+														<%= subFile.name %>
+														<img src="/img/play-button.svg" width="20px">
+													</li>
+												</a>
+							    			<% } else if (subFile.type === "pdf") { %>
+							    				<a href="/streamer?<%= url + 'file' + (size + 1) + "=" + subFile.name %>">
+													<li>
+														<%= subFile.name %>
+														<img src="/img/agenda.svg" width="20px">
+													</li>
+												</a>
+							    			<% } %>
+										<% }); %>
+							    	<!-- end the file 3 if-->
+							   		<% } %>
+							
+								<!--end the file 2 if-->
+								<% } else { %>
+								
+								
+								<% } %>
+							
+							<% }); %>
+						
+						<!--end the file 1 if-->
+						<% } else { %>
+						
+							<% file.childer.forEach( subFile => { %>
+								<% if (subFile.type === "dir") { %>
+									<a href="/browser?<%= url  + 'file' + (size+1) + "=" + subFile.name %>" >
+										<li>
+											<%= subFile.name %>
+											<img src="/img/folder.svg" width="20px">
+										</li>
+									</a>
+							    <% } else if (subFile.type === "audio") { %>
+							    	<a href="/viewer?<%= url + 'file' + (size + 1) + "=" + subFile.name %>">
+										<li>
+											<%= subFile.name %>
+											<img src="/img/speaker.svg" width="20px">
+										</li>
+									</a>
+							    <% } else if (subFile.type === "video") { %>
+							    	<a href="/viewer?<%= url + 'file' + (size + 1) + "=" + subFile.name %>">
+										<li>
+											<%= subFile.name %>
+											<img src="/img/play-button.svg" width="20px">
+										</li>
+									</a>
+							    <% } else if (subFile.type === "pdf") { %>
+							    	<a href="/streamer?<%= url + 'file' + (size + 1) + "=" + subFile.name %>">
+										<li>
+											<%= subFile.name %>
+											<img src="/img/agenda.svg" width="20px">
+										</li>
+									</a>
+							    <% } %>
+							    
+							<% }); %>
+						
+						<% } %>
+					
+					<% } %>
+
+				<% }); %>
+
+		  </ul>
+		  
+		</div>
+	  </section>
+
+	  <br />
+
+	  <br />
+
+
+	  <!--start footer and my name (;-->
+
+	  <footer>
+		<div class="container noborder">
+
+		  <p>Made with ♥ ↝ <a href="https://fb.com/Almo7aya">Ali Almohaya</a></p>
+
+		  <p> مصممه خصيصا للمسابقة الرمضانية الاولى </p>
+		</div>
+	  </footer>
+
+	  <!--end footer and my name (;-->
+
+
+	</main>
+
+
+	<!--add jQuery lib-->
+	<script src="/js/jquery.js"></script>
+	<!--main javascript file-->
+	<script src="/js/index.js"></script>
+
+  </body>
+</html>
