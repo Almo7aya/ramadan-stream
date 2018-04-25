@@ -1,5 +1,5 @@
 # ramadan-stream
-Simple Stream Server with Ramadan Template to shear the media
+Simple Stream Server with Ramadan Template to share the media
 Made With NodeJS with express 
 Good Stream server with some bugs
 
