@@ -620,6 +620,8 @@ section.estraha ul.files li {
   margin: 10px 0px;
   
   font-size: .85em;
+
+  text-shadow: 0px 0px 2px black;
   
 }
 
