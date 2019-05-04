@@ -1,3 +1,6 @@
+# This project is soo old and it contains horrible bugs, errors and bad practises
+
+
 # ramadan-stream
 Simple Stream Server with Ramadan Template to share the media
 Made With NodeJS with express 
